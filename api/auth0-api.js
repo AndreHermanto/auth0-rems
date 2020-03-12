@@ -1,5 +1,5 @@
 var request = require("request");
-var config = require("../config/config")
+var config = require("../config/keys")
 
 module.exports ={
   getAccessToken: function(){
