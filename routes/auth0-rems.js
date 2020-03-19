@@ -62,7 +62,7 @@ router.post('/add-roles', function(req, res, next) {
 				stamp.pipe(writeStream);
 				stamp.image('approved_stamp.png', 150, 200, {width: 350});
 				stamp.fontSize(12);
-				stamp.fillColor('#66cc99').text(cohortsMapping.cohorts['9da80d63-c29e-48bd-8cbb-a725f662df05']['cohort'] + " Data Access Comittee", 235, 255)
+				stamp.fillColor('#66cc99').text(cohortsMapping.cohorts[resource]['cohort'] + " Data Access Comittee", 235, 255)
 				stamp.fillColor('#66cc99').text("has approved this application", 250, 275)
 				stamp.fillColor('#66cc99').text("on " + moment(new Date()).format("ll"), 275, 390)
 				stamp.end();
