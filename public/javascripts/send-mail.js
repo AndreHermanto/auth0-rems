@@ -2,22 +2,17 @@ var nodemailer = require('nodemailer');
 const template = require('./mail-template');
 
 var transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
-  requireTLS: true,
-  auth: {
-    user: 'vectis.rems@gmail.com',
-    pass: 'garvan2020'
-  }
+  host: 'smtp.garvan.unsw.edu.au',
+  port: 25,
+  tls: { secureProtocol: "TLSv1_method" }
 });
 
 module.exports = {
     sendEmail: function(email, cohort, html, emailOnTemplate){
         var mailOptions = {
-            from: 'vectis.rems@gmail.com',
+            from: 'REMS-NO-REPLY@garvan.org.au',
             to: email,
-            subject: 'Vectis REMS notification',
+            subject: 'Garvan REMS notification',
             html: template[html](email, cohort, emailOnTemplate)
           };
           
@@ -32,9 +27,9 @@ module.exports = {
     },
     sendEmailWithAttachment: function(email, cohort, html, emailOnTemplate, path){
         var mailOptions = {
-            from: 'vectis.rems@gmail.com',
+            from: 'REMS-NO-REPLY@garvan.org.au',
             to: email,
-            subject: 'Vectis REMS notification',
+            subject: 'Garvan REMS notification',
             html: template[html](email, cohort, emailOnTemplate),
             attachments: [{
                 filename: 'rems_cohort_access.pdf',

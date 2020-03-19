@@ -14,7 +14,7 @@ router.post('/remove-roles', function(req, res, next) {
   auth0api.getAccessToken().then(body => {
 		const access_token = JSON.parse(body).access_token;
 		const applicationId = req.body[0].application;
-		const resource = req.body[0].resource;
+		const resource = req.body[0].resource.split(']')[1];
 		const user = req.body[0].user;
 		const email = req.body[0].mail;
 
@@ -31,7 +31,6 @@ router.post('/remove-roles', function(req, res, next) {
 router.get('/', function(req, res, next) {
 	auth0api.getAccessToken().then(body => {
 		const access_token = JSON.parse(body).access_token;
-
 		auth0api.getRoles(access_token).then(roles => {
 			  res.send(roles)
 		  })
@@ -43,7 +42,7 @@ router.post('/add-roles', function(req, res, next) {
   auth0api.getAccessToken().then(body => {
 		const access_token = JSON.parse(body).access_token;
 		const applicationId = req.body[0].application;
-		const resource = req.body[0].resource;
+		const resource = req.body[0].resource.split(']')[1];
 		const user = req.body[0].user;
 		const email = req.body[0].mail;
 
