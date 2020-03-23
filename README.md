@@ -1,3 +1,6 @@
+# Swagger Documentation
+https://app.swaggerhub.com/apis-docs/AndreHermanto/auth0-rems/1.0.0
+
 # auth0-rems
 Web service for modifying Auth0 user roles 
 
@@ -16,6 +19,6 @@ docker build -t auth0-rems .
 
 Run docker image
 ```bash
-docker run -p [CHOOSE_ANY_PORT]:3000 -d auth0-rems
+docker run -p [CHOOSE_ANY_PORT]:3333 -d auth0-rems
 ```
 
