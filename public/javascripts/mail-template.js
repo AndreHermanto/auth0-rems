@@ -13,7 +13,7 @@ var getGeneralTemplateApplicant = function(content, responsibleEmail){
             <div class="main">
               ${content}
   
-              <strong>Vectis REMS</strong>
+              <strong>Garvan REMS</strong>
   
               <br><br>
               <hr style="border: 2px solid #EAEEF3; border-bottom: 0; margin: 20px 0;">
@@ -47,7 +47,7 @@ var getGeneralTemplateCommittee = function(content){
             <div class="main">
               ${content}
   
-              <strong>Vectis REMS</strong>
+              <strong>Garvan REMS</strong>
   
               <br><br>
               <hr style="border: 2px solid #EAEEF3; border-bottom: 0; margin: 20px 0;">
