@@ -12,7 +12,7 @@ module.exports = {
         var mailOptions = {
             from: 'REMS-NO-REPLY@garvan.org.au',
             to: email,
-            subject: `Your Application to the ${cohort} Cohort is Unsuccessful`,
+            subject: `Your Access to the ${cohort} Cohort is Revoked`,
             html: template[html](email, cohort, emailOnTemplate)
           };
           

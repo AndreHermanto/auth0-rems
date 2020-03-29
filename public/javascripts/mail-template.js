@@ -68,24 +68,24 @@ module.exports = {
         return getGeneralTemplateApplicant(`
         <h2>Your application request has been granted</h2>
   
-        <p>${applicantEmail} now have access to ${cohort}</p>`, committeeEmail)
+        <p>${applicantEmail} now have access to ${cohort} cohort</p>`, committeeEmail)
     },
     getMailTemplateForRejectedApplicant: function(applicantEmail, cohort, committeeEmail){
         return getGeneralTemplateApplicant(`
-        <h2>Your application request has been denied</h2>
+        <h2>Your access to the ${cohort} cohort has been revoked</h2>
   
-        <p>${applicantEmail} failed to have access to ${cohort}</p>`, committeeEmail)
+        <p>${applicantEmail} no longer have access to ${cohort} cohort</p>`, committeeEmail)
     },
     getMailTemplateForApprovedCommittee: function(committeeEmail, cohort, applicantEmail){
         return getGeneralTemplateCommittee(`
         <h2>A new user has been granted access to your cohort</h2>
   
-        <p>${applicantEmail} has now been granted access to ${cohort}</p>`)
+        <p>${applicantEmail} has now been granted access to ${cohort} cohort</p>`)
     },
     getMailTemplateForRejectedCommittee: function(committeeEmail, cohort, applicantEmail){
         return getGeneralTemplateCommittee(`
-        <h2>A user has been denied to access your cohort</h2>
+        <h2>A user access to ${cohort} cohort has been revoked</h2>
   
-        <p>${applicantEmail} has been denied to access ${cohort}</p>`)
+        <p>${applicantEmail} no longer have access to ${cohort} cohort</p>`)
     },
 }
