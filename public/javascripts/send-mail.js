@@ -29,7 +29,7 @@ module.exports = {
         var mailOptions = {
             from: 'REMS-NO-REPLY@garvan.org.au',
             to: email,
-            subject: `Your Application to the ${cohort} Cohort is Unsuccessful`,
+            subject: `Your Application to the ${cohort} Cohort is Successful`,
             html: template[html](email, cohort, emailOnTemplate),
             attachments: [{
                 filename: 'rems_cohort_access.pdf',
