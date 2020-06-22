@@ -1,3 +1,5 @@
+const cohortsMapping = require('../../config/cohort-value-mapping');
+
 var getGeneralTemplateApplicant = function(content, responsibleEmail){
     return `<html>
     <head>
@@ -68,7 +70,11 @@ module.exports = {
         return getGeneralTemplateApplicant(`
         <h2>Your application request has been granted</h2>
   
-        <p>${applicantEmail} now have access to ${cohort} cohort</p>`, committeeEmail)
+        <p>${applicantEmail} now have access to ${cohort} cohort</p>
+        
+        <p>Using the same email address and password as you used in <a href="https://rems.public.garvan.org.au/" target="_blank">Garvan REMS</a> you can explore the ${cohort} cohort on Vectis here: 
+        <a href="${cohortsMapping.cohortsPlatformLink[cohort]}" target="_blank">${cohortsMapping.cohortsPlatformLink[cohort]}</a>
+        </p>`, committeeEmail)
     },
     getMailTemplateForRejectedApplicant: function(applicantEmail, cohort, committeeEmail){
         return getGeneralTemplateApplicant(`
